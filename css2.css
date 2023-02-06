@@ -1,0 +1,14 @@
+button {
+    border: none;
+    outline: none;
+}
+div {
+    border: dotted salmon 5px;
+}
+span {
+    border: dashed yellowgreen 3px;
+}
+input {
+    border: solid skyblue 8px;
+    border-radius: 10px;
+}
