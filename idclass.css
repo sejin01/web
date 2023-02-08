@@ -1,0 +1,12 @@
+#id1 {
+    color: black;
+}
+.class1 {
+    color: red;
+}
+.class1 div{
+    color: rgb(47, 153, 234);
+}
+.class1 span{
+    background-color: rgb(218, 252, 115);
+}
