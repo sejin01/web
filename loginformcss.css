@@ -1,0 +1,14 @@
+button:hover {
+    border: soild rgb(124, 241, 140) 3px;
+    background-color: orange;
+    color: white;
+}
+
+input:focus {
+    border: soild rgb(90, 63, 225) 5px;
+}
+
+div::before {
+    background-color: orange;
+    content: "*";
+}
