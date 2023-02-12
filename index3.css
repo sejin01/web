@@ -1,0 +1,18 @@
+body {
+    margin: 5;
+}
+
+div {
+    background-color: aquamarine;
+}
+.a {
+    margin: auto;
+    background-color: blueviolet;
+    width: 50%;
+}
+span {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border: soild black 5px;
+}
