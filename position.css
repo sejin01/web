@@ -1,0 +1,23 @@
+.a {
+    display: block;
+    position: fixed;
+    background-color: rgb(251, 96, 96);
+    right: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+.b {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color:black;
+    opacity: 0.5;
+}
+
+.c {
+    height: 1500px;
+}
