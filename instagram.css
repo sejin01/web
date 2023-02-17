@@ -1,0 +1,41 @@
+nav {
+    height: 54px;
+    background-color: rgb(249, 161, 161);
+}
+
+#container {
+
+}
+
+#story {
+    height: 84px;
+    padding: 16px 0;
+    border: soild black 1px;
+}
+
+#content {
+
+}
+
+section {
+    flex: 1;
+    background-color: rgb(238, 238, 110);
+}
+aside {
+    width: 293px;
+}
+
+@media (max-width: 1000px){
+    aside{
+        display: none;
+    }
+}
+
+.post {
+    height: 796px;
+    background-color: rgb(161, 161, 240);
+}
+
+body {
+    margin: 0;
+}
