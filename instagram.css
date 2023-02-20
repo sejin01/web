@@ -1,34 +1,72 @@
 nav {
+    display: flex;
     height: 54px;
-    background-color: rgb(249, 161, 161);
+    background-color: white;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+nav > div{
+    flex: 1;
+}
+nav input {
+    outline: none;
+    border: solid 2px gray;
+    padding: 3px 10px 3px 26px;
+}
+nav input::placeholder{
+    text-align: left;
+}
+.search-icon{
+    text-align: right;
+}
+
+.icons{
+    display: flex;
+    justify-self: space-evenly;
 }
 
 #container {
-
+    display: flex;
+    margin: auto;
+    width: fit-content;
 }
 
 #story {
+    background-color: white;
     height: 84px;
     padding: 16px 0;
-    border: soild black 1px;
+    border: solid black 1px;
+    margin-bottom: 24px;
+    display: flex;
+    overflow-y: hidden;
 }
-
+.story-item {
+    margin: 0 10px;
+}
+.story-img {
+    width: 66px;
+    height: 66px;
+    background-color: rgb(150, 79, 244);
+}
+.story-item > :nth-child(2){
+    text-align: center;
+}
 #content {
-
+   
 }
 
 section {
+    padding: 30px 0;
+    max-width: 600px;
+    width: 600px;
     flex: 1;
-    background-color: rgb(238, 238, 110);
 }
 aside {
     width: 293px;
-}
-
-@media (max-width: 1000px){
-    aside{
-        display: none;
-    }
+    background-color:antiquewhite;
 }
 
 .post {
@@ -38,4 +76,17 @@ aside {
 
 body {
     margin: 0;
+    background-color: aliceblue;
+}
+
+@media (max-width: 1000px){
+    aside{
+        display: none;
+    }
+}
+
+@media (max-width: 640px){
+    section {
+        max-width: 100%;
+    }
 }
