@@ -34,6 +34,27 @@ nav input::placeholder{
     width: fit-content;
 }
 
+.faccount{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.faccount .img{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.faccount > :nth-child(2) {
+    flex: 1;
+    padding: 4px;
+}
+.faccount > :nth-child(3) {
+    color: blue;
+.faccount > :nth-child(2) > :nth-child(2) {
+    font-size: 14px;
+    color: lightgray;
+}
+
 #story {
     background-color: white;
     height: 84px;
@@ -65,8 +86,23 @@ section {
     flex: 1;
 }
 aside {
+    margin-top: 30px;
     width: 293px;
     background-color:antiquewhite;
+    padding: 4px;
+    margin-left: 10px;
+}
+aside > :nth-child(2){
+    margin: 10px 0;;
+    display: flex;
+    justify-content: space-between;
+}
+aside > :nth-child(3){
+    margin: 10px 0;;
+}
+aside > :nth-child(4){
+    font-size: 12px;
+    color:aliceblue;
 }
 
 .post {
