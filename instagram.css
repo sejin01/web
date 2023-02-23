@@ -50,6 +50,7 @@ nav input::placeholder{
 }
 .faccount > :nth-child(3) {
     color: blue;
+}
 .faccount > :nth-child(2) > :nth-child(2) {
     font-size: 14px;
     color: lightgray;
@@ -71,6 +72,7 @@ nav input::placeholder{
     width: 66px;
     height: 66px;
     background-color: rgb(150, 79, 244);
+    border-radius: 100%;
 }
 .story-item > :nth-child(2){
     text-align: center;
@@ -85,13 +87,15 @@ section {
     width: 600px;
     flex: 1;
 }
+
 aside {
     margin-top: 30px;
     width: 293px;
-    background-color:antiquewhite;
+    background-color:rgb(47, 216, 104);
     padding: 4px;
     margin-left: 10px;
 }
+
 aside > :nth-child(2){
     margin: 10px 0;;
     display: flex;
