@@ -130,6 +130,20 @@ aside > :nth-child(4){
 .post-comment {
     background-color: white;
 }
+.post-input {
+    display: flex;
+    padding: 5px;
+    background-color: white;
+}
+.post-input > :nth-child(1){
+    margin-right: 10px;
+}
+.post-input input {
+    flex:1;
+    border: none;
+    outline: none;
+}
+
 .post-bar {
     display: flex;
     justify-content: space-between;
@@ -169,5 +183,9 @@ body {
 @media (max-width: 640px){
     section {
         max-width: 100%;
+        padding: 0;
+    }
+    #story {
+        margin: 0;
     }
 }
