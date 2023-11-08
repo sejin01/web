@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            background: #ff0;
+        }
+        section:after {
+            content:"";
+            clear: both;
+            display: block;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        div:nth-child(1){
+            background: #f00;
+        }
+        div:nth-child(2){
+            background: #0f0;
+            /*display: none; -> 자리 유지 x*/
+            visibility: hidden; /*자리 유지*/
+            opacity: 0;
+        }
+        div:nth-child(3){
+            background: #00f;
+        }
+        /*float
+        1. float 요소는 그 자리에서 뜬다.
+        2. 부모가 자식의 높이 값을 인지하지 못한다.
+        3. 너비와 높이가 자식만큼 줄어든다.
+        4. 인라인 요소에 float이 적용되면 자동으로 block 요소로 변경
+        
+        float 해제
+        float이 걸린 요소의 직계부모에게 :after 처리*/
+    </style>
+</head>
+<body>
+    <h1>float</h1>
+    <section>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+    </section>
+</body>
+</html>

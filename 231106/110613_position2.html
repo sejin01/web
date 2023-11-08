@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            width: 500px;
+            height: 300px;
+            background: #ffc;
+            margin: 100px auto 0;
+            position: relative;
+        }
+        .box1 {
+            background: #fcf;
+            position: absolute;
+            left: 50px;
+            top: 70px;
+        }
+        .box2 {
+            background: #cff;
+            position: absolute;
+            right: 100px;
+            bottom: 50px;
+        }
+        /* position: abuolute;
+        1. 해당 요소는 그자리에서 뜬다. -> 동생 요소가 그 자리를 치고 올라간다.
+        2. 부모는 자식의 높이 값을 인지하지 못한다. -> 필요하다면 반드시 부모에게 높이값을 지정함
+        3. 너비가 자식만큼 줄어든다.
+        4. 인라인 요소에 적용될 경우 블록요소로 변경된다.
+        5. 좌표를 지정하면 body가 기준으로 움직임*/
+        
+        .box3 {
+            background: #fcf;
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+        /* position: relative;
+        1. 그 자리에서 뜬다.
+        2. 동생 요소가 올라오지 못한다. -> 자기 자리 유지
+        3. 좌표를 주면 현재 위치로부터 이동한다.
+        4. 부모요소에 relative를 적용하면 자식을 가두는 역할을 한다.*/
+        
+        .box4 {
+            background: #cfc;
+            position: fixed;
+            left: 200px;
+            top: 200px;
+        }
+        /* position: fixed;
+        absolute와 거의 동일
+        1. 좌표를 주면 무조건 body 기준*/
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+    </section>
+</body>
+</html>

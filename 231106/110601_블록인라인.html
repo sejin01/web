@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록, 인라인</title>
+    <style>
+        * {
+            margin: 0; /*바깥쪽 여백*/
+            padding: 0; /*안쪽 여백*/
+        }
+        p {
+            background: #f00;
+
+            width: 500px;
+            height: 200px;
+            margin: 20px;
+            padding: 50px;
+            border: 2px soild #00f;
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 40px;
+            padding: 50px;
+            border: 2px soild #000;
+            background: #ff0;
+        }
+        span {
+            background: #00f;
+            width: 300px;
+            height: 200px;
+            margin: 50px;
+            padding: 30px;
+            border: 2px solid #ff0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!--블록요소
+    부모 너비의 100%를 가져감
+    자기 외에 다른 형제들 올라올 수 없음
+    너비, 높이를 가짐
+    마진, 패딩, 보더 적용 가능
+    p -->
+    
+    <!--인라인요소
+    자식의 너비만큼 배경색을 표현
+    너비, 높이가 없음
+    자기 외에 다른 형제가 올라올 수 있음 (단, 형제가 인라인 요소일 경우만)
+    마진, 패딩, 보더는 적용이 되나 위아래로는 밀어내지 못함
+    span, a, strong, em, u, i, b ...-->
+    
+   <p>p요소</p>
+   <div>div요소</div>
+   <span>span요소</span>
+   <a href="#">a요소(앵커)</a>
+   <h1>h1요소</h1>
+</body>
+</html>

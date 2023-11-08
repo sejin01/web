@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float문제1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            width: 700px;
+            height: 100px;
+            background: #cff;
+            margin: 0 auto;
+        }
+        section {
+            width: 700px;
+            background: #ffc;
+            margin: 0 auto;
+        }
+        section:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        section div {
+            width: 200px;
+            height: 200px;
+            background: #fcf;
+            float: left;
+            margin-right: 17px;
+            border: 1px solid #f00;
+            padding: 10px;
+        }
+        section div:last-child {
+            margin-right: 0;
+        }
+        footer {
+            width: 700px;
+            height: 100px;
+            background: #ccc;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <section>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+    </section>
+    <footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>형제선택자</title>
+    <style>
+        /*nth-child(n) - 형제의 순번이 중요
+        nth-of-type(n) - 요소의 종류가 중요*/
+        section div:nth-child(3) {
+            color: #f00;
+        }
+        section div:nth-child(5) {
+            color: #00f;
+        }
+        section p:nth-child(4) {
+            color: #ff0;
+        }
+        section p:nth-last-child(2) {
+            color: #ccc;
+        }
+        section p:nth-of-type(2) {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>div</div>
+        <div>div</div>
+        <div>div</div>
+        <p>p</p>
+        <div>div</div>
+        <p>p</p>
+        <div>div</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css특정도점수</title>
+    <style>
+        /*똑같은 태그를 사용할 때
+        아래쪽에 있는 것을 우선적으로 적용
+        
+        [ css 특정도 점수 ]
+        요소 : 1점
+        class : 10점
+        id : 100점
+        인라인 스타일 : 1000점
+        !important : 10000점*/
+        
+        div p { /*2점*/
+            font-size: 24px;
+            color: #f00;
+        }
+        section div p { /*3점*/
+            color: #00f;
+            background: #ff0;
+        }
+        .box p { /*11점*/
+            color: #0f0;
+        }
+        div.box p { /*12점*/
+            color: #f00;
+        }
+        #txt { /*100점*/
+            color: #f0f;
+        }
+        p { /*10000점*/
+            color: #00f !important;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box">
+            <p id="txt" style="color:#ccc">text</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>박스모델링</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*marign, padding 상하좌우 / 상하 좌우 / 상 좌우 하 / 상 우 하 좌*/
+        .box1 {
+            background: #ff0;
+            width: 500px;
+            padding: 20px;
+            margin: 50px;
+            border: 5px solid #00f;
+        }
+        /*콘텐츠 너비 : width값(500)
+          전체 너비 : 콘텐츠 너비(500) + 좌우패딩(20*2)+ 좌우마진(50*2) + 좌우보더(5*2) = 650*/
+        .box2 {
+            width: 400px;
+            height: 100px;
+            border: 4px soild #f00;
+            margin: 20px;
+            padding: 60px;
+        }
+        /*콘텐츠 너비 : width값(400)
+          전체 너비 : 콘텐츠 너비(400) + 좌우패딩(60*2)+ 좌우마진(20*2) + 좌우보더(4*2) = 400 + 120 + 40 + 8 = 568*/
+        .box3 {
+            width: 400px;
+            background: #ff0;
+            margin: 20px 40px;
+            padding: 50px 20px 60px;
+            border:4px solid #f00;
+            width: 460px;
+        }
+        /*콘텐츠 너비 : width값(460)
+          전체 너비 : 콘텐츠 너비(460) + 좌우패딩(20*2)+ 좌우마진(40*2) + 좌우보더(4*2) = 460 + 40 + 80 + 8 = 588*/
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+</body>
+</html>

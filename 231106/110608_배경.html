@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배경</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            width: 500px;
+            height: 200px;
+            background: #ff0;
+        }
+        .box2 {
+            width: 600px;
+            height: 300px;
+            background: linear-gradient(0deg, #ff0000 0%, #ffffff 100%);
+        }
+        .box3 {
+            width: 800px;
+            height: 500px;
+            background-image: url(https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202305%2F20230504165031977.jpg);
+            background-repeat: no-repeat;
+            background-position: center;   /*수평 수직*/
+            background-size: cover;
+            background-attachment: fixed;  /*fixed -> body 기준으로 적용*/
+            
+            /*위의 내용 축약
+            background: url(https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202305%2F20230504165031977.jpg) no repeat center/cover fixed;*/
+        }
+        .box4 {
+            width: 200px;
+            height: 100px;
+            background: rgba(0,0,0,0.5);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+</body>
+</html>
