@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .tb1{
+            width: 300px;
+            border-collapse: collapse;
+        }
+        
+        .tb1 td{
+            box-sizing: border-box;
+            border: 1px solid pink;
+            height: 100px;
+            text-align: center;
+            vertical-align: top; /*이 태그는 테이블 안에서만 적용 됨*/
+        }
+        
+        .w100{
+            width: 100px;
+        }
+        
+        .table2{
+            border-collapse: collapse;
+            margin-top: 100px;
+            width: 400px;
+        }
+        
+        .table2 td{
+            box-sizing: border-box;
+            border: 1px solid pink;
+            height: 100px;
+            text-align: center;
+            vertical-align: top;
+            width: calc(400px / 3);
+        }
+        
+        .tb3{
+            margin-top: 100px;
+            width: 200px;
+            border-collapse: collapse;
+        }
+        
+        .tb3 td{
+            border: 1px dotted pink;
+            height: 50px;
+        }
+        
+        .tb4{
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 100px;
+            text-align: center;
+        }
+        
+        .tb4 td{
+            height: 50px;
+            border: 1px solid skyblue;
+        } 
+    </style>
+</head>
+<body>
+    <table class="tb1">
+        <tr>
+            <td class="w100">a</td>
+            <td>b</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>d</td>
+        </tr>
+    </table>
+    
+    <table class="table2">
+        <tr>
+            <td>kbs</td>
+            <td>mbc</td>
+            <td>sbs</td>
+        </tr>
+        <tr>
+            <td>ebs</td>
+            <td>tvn</td>
+            <td>ytn</td>
+        </tr>
+    </table>
+    
+    <table class="tb3">
+        <tr>
+            <td rowspan="2">a</td>
+            <td colspan="2">b</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>d</td>
+        </tr>
+    </table>
+    
+    <table class="tb4">
+        <tr>
+            <td colspan="2">a</td>
+            <td rowspan="2">d</td>
+        </tr>
+        <tr>
+            <td rowspan="2">b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td colspan="2">e</td>
+        </tr>
+    </table>
+</body>
+</html>

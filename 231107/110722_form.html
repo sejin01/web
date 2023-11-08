@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style>
+        select{
+            appearance : none; /*기본화살표 없앰*/
+            width: 80px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="id">아이디</label>
+        <input type="text" id="id"><br>
+        
+        <label for="pw">패스워드</label>
+        <input type="password" id="pw">
+        
+        <br>
+        문자수신
+        <input type="radio" name="sns" id="yes" checked>
+        <label for="yes">수신</label>
+        <input type="radio" name="sns" id="no">
+        <label for="no">비수신</label>
+        
+        <br>
+        관심분야
+        <input type="checkbox" id="html"><label for="html">html</label> 
+        <input type="checkbox" id="css"><label for="css">css</label>
+        <input type="checkbox" id="jquery"><label for="jquery">jquery</label>
+        
+        <br>
+        전화번호
+        <select>
+            <option>010</option>
+            <option>011</option>
+            <option selected>016</option>
+            <option>017</option>
+            <option>018</option>
+        </select>
+        
+        <br>
+        <textarea></textarea>
+        
+        <br>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시작성">
+        <input type="button" value="일반버튼">
+    </form>
+</body>
+</html>

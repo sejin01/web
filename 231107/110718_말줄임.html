@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>말줄임</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .text1{
+            background: #ffc;
+            width: 300px; /*영역이 정해져 있어야 함*/
+            white-space: nowrap; /*강제로 한줄 적용*/
+            overflow: hidden; /*흘러넘치는 부분 숨겨줌*/
+            text-overflow: ellipsis; /*...표시*/
+        }
+        
+        .text2{
+            background: #fcf;
+            width: 300px;
+            margin-top: 50px;
+            font-size: 20px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4; /*몇줄인지*/
+        }
+        
+        .text3{
+            width: 300px;
+            margin-top: 50px;
+            background: #cff;
+        }
+        
+        .text3 a{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            /*a태그에 말줄임을 쓸 때 block보단 inline-block이 나음*/
+            display: inline-block;
+            /*a태그에 말줄임 쓸 때 이 선택자로 빈공간이 생기지 않게 해야 함*/
+            max-width: 100% 
+        }
+    </style>
+</head>
+<body>
+    <p class="text1">
+        안녕하세요 만나서 반갑습니다 너무 졸리다....................
+    </p>
+    
+    <p class="text2">
+        대통령은 조약을 체결·비준하고, 외교사절을 신임·접수 또는 파견하며, 선전포고와 강화를 한다. 대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다.
+
+        대법원에 대법관을 둔다. 다만, 법률이 정하는 바에 의하여 대법관이 아닌 법관을 둘 수 있다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.
+    </p>
+    
+    <p class="text3">
+        <a href="#">
+        대통령은 조약을 체결·비준하고, 외교사절을 신임·접수 또는 파견하며, 선전포고와 강화를 한다. 대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다.
+
+        대법원에 대법관을 둔다. 다만, 법률이 정하는 바에 의하여 대법관이 아닌 법관을 둘 수 있다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.
+        </a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table문제</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        table{
+            width: 500px;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        table th, td{
+            padding: 30px 0;
+            width: calc(500px / 3);
+        }
+        
+        table th{
+            background: #fcfcfc;
+            border: 1px solid white;
+        }
+        
+        table td{
+            color: #333;
+            border: 1px solid #fcfcfc;
+        }
+        
+        table span{
+            display: inline-block;
+            color: red;
+            font-weight: bold;
+            text-indent: 5px;
+        }
+        
+        table .nb{
+            border-left: none;
+        }
+        
+        table .nb2{
+            border-right: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th class="nb">&nbsp;</th>
+            <th>대형 프랜차이즈<br>(아메리카노 4000원)</th>
+            <th class="nb2">셀렉토 커피<br>(아메리카노 2,800원)</th>
+        </tr>
+        <tr>
+            <td class="nb">주문단가</td>
+            <td>8,000원</td>
+            <td class="nb2">6,500원<span>(18% 하락)</span></td>
+        </tr>
+        <tr>
+            <td class="nb">입점객수</td>
+            <td>100</td>
+            <td class="nb2">170~200<span>(85% 상승)</span></td>
+        </tr>
+    </table>
+    
+    <!--
+    &nbsp;  ->  공백
+    &amp;   ->  &
+    &copy;  ->  ⓒ
+    &middot; -> ·
+    -->
+</body>
+</html>
