@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show_hide_toggle</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        div { background: #ccc; margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <div>
+        <img src="images/pic1.jpg" alt="이미지">
+    </div>
+    <input type="button" value="hide()" class="btn1">
+    <input type="button" value="show()" class="btn2">
+    <input type="button" value="toggle()" class="btn3">
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //.btn1 클릭 -> div 숨기기
+        $(".btn1").click(function(){
+           $("div").hide(3000);  // 1000 = 1초 (나노초) 
+            // width, height, opacity가 0으로 바뀌면서
+            // 최종적으로 display:none으로 변경
+        });
+        
+        $(".btn2").click(function(){
+           $("div").show(3000);  // 1000 = 1초 (나노초)
+            // 최종적으로 display:block으로 변경
+        });
+        
+         $(".btn3").click(function(){
+           $("div").toggle(3000);  // 1000 = 1초 (나노초)
+            // 최종적으로 display:block으로 변경
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slideUp() slideDown()</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        div { background: #ccc; height: 300px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>슬라이드 업다운</h1>
+    </div>
+    
+    <button class="btn1">slideUp()</button>
+    <button class="btn2">slideDown()</button>
+    <button class="btn2">slideToggle()</button>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //btn1 클릭 -> div 접기(위로 올려라)
+        $(".btn1").click(function(){
+           $("div").slideUp(3000); 
+        });
+        //height: 0 -> display:none
+        
+        //btn2 클릭 -> div 펼치기(아래로 올려라)
+        $(".btn2").click(function(){
+           $("div").slideDown(3000); 
+        });
+        //height: 원래지정한 크기만큼 -> display:block
+        
+        //btn3 클릭 -> div 접고 펼치기
+        $(".btn3").click(function(){
+           $("div").slideToggle(3000); 
+        });
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+</head>
+<body>
+    <h1 class="title">css()</h1>
+    <p id="text">css의 속성을 그대로 사용할 수 있는 함수</p>
+    
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> https://cdnjs.com/ 사이트-->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $("h1").css({"color":"#f00"});
+        $("p").css({"color":"#00f", "background":"#fcf"});
+        //$("p").css("color","#00f");
+        $(".title").css({"font-size":"50px"});
+        $("#text").css({"font-weight":"bold"});
+    </script>
+    
+</body>
+</html>

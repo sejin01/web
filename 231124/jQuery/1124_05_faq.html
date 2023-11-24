@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        p { font-size: 28px; cursor: pointer;}
+        div { background: #cfc; font-size: 24px; display: none;}
+    </style>
+    
+</head>
+<body>
+    <ul>
+        <li>
+            <p>Q1) 제이쿼리 재미있나요?</p>
+            <div>감동적. 네~ 재미있어요~</div>
+        </li>
+        <li>
+            <p>Q2) 제이쿼리 쉽나요?</p>
+            <div>감동적. 네~ 쉬워요~</div>
+        </li>
+        <li>
+            <p>Q3) 제이쿼리 언제 끝나나요?</p>
+            <div>감동적. 이번시간까지 합니다~</div>
+        </li>
+    </ul>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //p 클릭 -> 클릭한 p의 다음 형제인 div 펼치기
+        $("p").click(function(){
+            $(this).next("div").slideToggle(500); 
+            //$(this).next().slideToggle(500); p태그 다음 형제는 div 하나이기 때문에 next() 해도 됨
+        });
+    </script>
+</body>
+</html>

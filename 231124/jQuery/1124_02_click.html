@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>click()</title>
+</head>
+<body>
+    <h1>click()</h1>
+    <p>클릭을 했을 때 이벤트를 담당</p>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //h1 클릭 -> h1의 글자 색상을 빨간색으로 변경
+        $("h1").click(function(){
+           $("h1").css({"color":"#f00"});
+        });
+        
+        //p 클릭 -> p의 배경 색상, 폰트 사이즈 변경
+        $("p").click(function(){
+           $("p").css({"background":"#ff0", "font-size":"28px"});
+        });
+    </script>
+</body>
+</html>
