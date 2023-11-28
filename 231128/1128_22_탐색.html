@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탐색</title>
+</head>
+<body>
+    <section>
+        <div class="box">
+            <p class="txt">section &gt; div &gt; p</p>
+        </div>
+        <p> section &gt; p</p>
+        <p> section &gt; p</p>
+        <p class="msg"> section &gt; p</p>
+        <p> section &gt; p</p>
+        <p> section &gt; p</p>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $("section").children("p").css({"color":"#f00"}); // section > p
+        $("section").find("p").css({"background":"#ff0"}); // section p
+        $(".box").next().css({"font-size":"24px"}); // .box + p
+        
+        $(".msg").prev().addClass("ppp"); // 이전 형제 (단수)
+        
+        $(".txt").parent().css({"text-align":"center"}); // 직계 부모
+        $(".txt").parents().addClass("ccc"); // 조상
+        $(".msg").siblings("p").addClass; //나 이외에 다른 형제들
+    </script>
+</body>
+</html>

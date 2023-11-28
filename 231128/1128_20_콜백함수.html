@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>콜백 함수</title>
+     <style>
+        * { margin: 0; padding: 0;}
+        div { width: 100px; height: 100px; margin-top: 40px; background: #fcf; position: relative;}
+    </style>
+</head>
+<body>
+    <div>box</div>
+    <button>100px 이동 후 배경색 변경</button>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $("button").click(function(){
+            // div를 1초동안 100px 이동한 후에 
+            $("div").animate({"left":"100px"},1000,function(){
+                $("div").css({"background":"#f00"});
+            });
+        });
+    </script>
+    
+</body>
+</html>
