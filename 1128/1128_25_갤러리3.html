@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        li { list-style: none;}
+        img { vertical-align: top;}
+        body { background: #333;}
+        section { width: 504px; margin: 100px auto 0;}
+        .bimg { border: 2px solid #ff0; margin-bottom: 20px;}
+        ul li { float: left; margin-right: 10px; border: 4px solid #ccc;}
+        ul .select { border-color: #f00;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="bimg">
+            <img src="images/slide1.jpg" alt="큰이미지">
+        </div>
+        <ul>
+            <li class="select">
+                <a href="#" data-src="images/slide1.jpg">
+                    <img src="images/th_slide1.jpg" alt="이미지1">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-src="images/slide2.jpg">
+                    <img src="images/th_slide2.jpg" alt="이미지2">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-src="images/slide3.jpg">
+                    <img src="images/th_slide3.jpg" alt="이미지3">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-src="images/slide4.jpg">
+                    <img src="images/th_slide4.jpg" alt="이미지4">
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $("li img").click(function(){
+            $("li").removeClass(); //li의 다른 형제들
+            $(this).parents("li").addClass("select");
+            
+            
+            var isrc = $(this).parents().attr("data-src");
+            $(".bimg img").attr("src",isrc);
+            
+            // var n = $(this).parents("li").index + 1;
+            //$("bimg img").attr("src","images/slide"+n+".jpg");
+        
+        });
+    </script>
+</body>
+</html>

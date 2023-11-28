@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover()</title>
+</head>
+<body>
+    <a href="#">box</a>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //대상이 같을 때는 hover
+//        $("a").hover(
+//            function(){
+//            //마우스를 올렸을 때
+//                $(this).css({"color":"#f00"});
+//            },
+//            function(){
+//            //마우스를 내렸을 때
+//                $(this).css({"color":"#000"});
+//            }
+//        );
+        // hover -> 커서가 들어갔을 땐 작동 x
+        
+        
+        //대상이 다를 때는 on
+        $("a").on("mouseover",function(){
+            $(this).css({"color":"#f00"});
+        });
+        
+        $("a").on("mouseleave",function(){
+            $(this).css({"color":"#000"});
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remove() empty()</title>
+</head>
+<body>
+    <ul>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+    <button class="btn1">remove()</button>
+    <button class="btn2">empty()</button>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(".btn1").click(function(){
+            // 요소 삭제
+            $("li:first-child").remove();
+        });
+        
+        $(".btn2").click(function(){
+            // 내용 삭제
+            $("li:first-child").empty();
+        });
+    </script>
+</body>
+</html>

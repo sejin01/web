@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delay()</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        div { width: 100px; height: 100px; background: #fcf; position: relative;} 
+    </style>
+</head>
+<body>
+    <button class="btn1">100px씩 이동하기</button>
+    <button class="btn2">정지하기</button>
+    <button class="btn3">200px씩 이동하기</button>
+    <div>box</div>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        // btn1 클릭 -> div 1초동안 100px씩 이동
+        $(".btn1").click(function(){
+            $("div").animate({"left":"+=100px"},1000);
+            //animate({left:100},1000)으로 해도 됨
+            //+= -> 누적
+        });
+        
+        // btn2 클릭 -> (앞에 진행하던 애니메이셔션)div 멈추기
+        $(".btn2").click(function(){
+            $("div").stop();
+        });
+        
+        // btn3 클릭 -> div 오른쪽으로 200px 이동 -> 2초 후 -> 아래로 100px 이동
+        $(".btn3").click(function(){
+            $("div").animate({"left":"100px"},1000);
+            $("div").delay(2000);
+            $("div").animate({"top":"100px"},1000);
+            // = $("div").animate({"left":"100px"},1000).delay(2000).animate({"top":"100px"},1000);
+            
+        });
+        
+        
+    </script>
+</body>
+</html>

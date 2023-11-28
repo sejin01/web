@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지역변수 전역변수</title>
+</head>
+<body>
+    <button class="btn1">btn1</button>
+    <button class="btn2">btn2</button>
+    <button class="btn3">btn3</button>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        var a = 10;
+        var b = 5;
+        var c = a + b;
+        
+        $(".btn1").click(function(){
+            alert(a);
+        });
+        
+        $(".btn2").click(function(){
+            var b = 7;
+            alert(b);
+        });
+        
+        $(".btn3").click(function(){
+            alert(c);
+        });
+    </script>
+</body>
+</html>

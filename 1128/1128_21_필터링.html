@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>필터링</title>
+</head>
+<body>
+    <ul class="part1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="part2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+     
+    <script src="js/jquery-1.11.1.min.js"></script>
+    
+    <script>
+        $("li:nth-child(3)").css({"color":"#f00"});
+        //equal - 인덱스 - 0부터 시작 
+        $("li:eq(6)").css({"background":"#ff0"});
+        //5보다 작은
+        $("li:lt(4)").css({"font-size":"24px"});
+        //4보다 큰
+        $("li:gt(3)").css({"font-weight":"bold"});
+        $("li").eq(5).css({"font-style":"italic"});
+    </script>
+</body>
+</html>
