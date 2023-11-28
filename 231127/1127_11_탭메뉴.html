@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{background: #333;}
+        section{width: 300px; margin: 100px auto 0; border: 2px solid #ff0;}
+        ul:after{content: ""; display: block; clear: both;}
+        ul li{float: left; width: 100px; line-height: 50px; text-align: center; border: 1px solid #ddd; background: #eee; box-sizing: border-box; list-style: none; cursor: pointer;}
+        ul li.select{background: #fff; border-bottom-color: #fff; background: #fff;}
+        div{padding: 20px; text-align: center; height: 200px; background: #fff; display: none;}
+        .view{display: block;}
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li data-tab="notice" class="select">공지사항</li>
+            <li data-tab="faq">FAQ</li>
+            <li data-tab="qna">QNA</li>
+        </ul>
+        
+        <div class="notice view">
+            <h1>공지사항 내용</h1>
+        </div>
+        
+        <div class="faq">
+            <h1>FAQ 내용</h1>
+        </div>
+        
+        <div class="qna">
+            <h1>QNA 내용</h1>
+        </div>
+    </section>
+    
+    
+    <script>
+        $("ul li").click(function(){
+            $("li").removeClass();
+            $(this).addClass("select");
+            
+            var n = $(this).attr("data-tab"); //notice, faq, qna
+            $("div").removeClass("view");
+            $("."+n).addClass("view");
+            
+//            var n = $(this).index() + 1;
+//            $("div").removeClass("view");
+//            $(".tab"+n).addClass("view");
+            
+        });
+        
+//        $("li:nth-child(1)").click(function(){
+//            $("div").removeClass("view");
+//            $("li").removeClass("select");
+//            $(".tab1").addClass("view");
+//            $("li:nth-child(1)").addClass("select");
+//        });
+//        
+//        $("li:nth-child(2)").click(function(){
+//            $("div").removeClass("view");
+//            $("li").removeClass("select");
+//            $(".tab2").addClass("view");
+//            $("li:nth-child(2)").addClass("select");
+//        });
+//        
+//        $("li:nth-child(3)").click(function(){
+//            $("div").removeClass("view");
+//            $("li").removeClass("select");
+//            $(".tab3").addClass("view");
+//            $("li:nth-child(3)").addClass("select");
+//        });
+        
+    </script>
+</body>
+</html>

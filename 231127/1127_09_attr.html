@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attr</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <img src="images/slide1.jpg" alt="오렌지주스">
+    </div>
+    <p>자막위치입니다.</p>
+    
+    <script>
+        //img를 클릭하면
+        //1. 이미지가 slide.jpg로 변경해라
+        //2. 클릭한 이미지의 alt값을 가져와서 자막을 오렌지쥬스로 교체해라
+        
+        $("img").click(function(){
+            $(this).attr("src", "images/slide2.jpg");
+            var msg = $(this).attr("alt"); //오렌지주스
+            $("p").text(msg);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <img src="images/slide1.jpg" alt="이미지">
+    </div>
+    <a href="#" class="btn1">prepend()</a>
+    <a href="#" class="btn2">append()</a>
+    
+    <script>
+        $(".btn1").click(function(){
+//            $("div").prepend("<p>안녕하세여</p>");
+            //특정 영역의 맨 앞부분에 내용을 집어넣음
+            $("<p>안녕하세여</p>").prependTo("div");
+            //보내야 하는 내용이 먼저 나온다면 prependTo로 바꿔서 사용 가능함
+        });
+        
+        $(".btn2").click(function(){
+//            $("div").append("<p>졸려</p>");
+            $("<p>졸려</p>").appendTo("div");
+        });
+    </script>
+</body>
+</html>

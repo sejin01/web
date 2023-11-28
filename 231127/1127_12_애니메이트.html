@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100px; height: 100px; background: #ff0;}
+        .fx{width: 300px; height: 200px; transition:0.3s;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <a href="#" class="btn1">너비를 300px로 변경</a>
+    <a href="#" class="btn2">높이를 200px로 변경</a>
+    <a href="#" class="btn3">너비 높이를 변경</a>
+    
+    <script>
+        $(".btn1").click(function(){
+           $(".box").animate({"width":"300px"}, 1000); 
+        });
+        //수치가 있는 css 속성만 가능
+        
+        $(".btn2").click(function(){
+           $(".box").animate({"height":"200px"}, 1000); 
+        });
+        
+        $(".btn3").click(function(){
+           $(".box").addClass("fx"); 
+        });
+        //되도록 transition을 활용한 클래스 추가, 제거 추천
+    </script>
+</body>
+</html>

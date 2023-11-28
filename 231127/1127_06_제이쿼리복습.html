@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리 복습</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .box{height: 300px; background: #ccc; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>제이쿼리 복습</h1>
+        <a href="#" class="close">닫기</a>
+    </div>
+    
+    <button class="btn1">css()</button>
+    <button class="btn2">hide()</button>
+    <button class="btn3">show()</button>
+    <button class="btn4">toggle()</button>
+    <button class="btn5">slideUp()</button>
+    <button class="btn6">slideDown()</button>
+    <button class="btn7">slideToggle()</button>
+    
+    <button class="btn8">fadeOut()</button>
+    <button class="btn9">fadeIn()</button>
+    <button class="btn10">fadeToggle()</button>
+    <button class="btn11">fadeTo()</button>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //btn1을 클릭하면 h1의 글자색을 #00f로 변경
+        //배경색을 #ff0으로 변경
+        $(".btn1").click(function(){
+            $("h1").css({"color":"#f00", "background":"#ff0"});
+            //인라인 스타일(1000점)로 적용된다.
+        });
+        
+        //btn2를 클릭하면 .box를 숨겨라 2초동안
+        $(".btn2").click(function(){
+           $(".box").hide(2000); //1000 = 1초 
+        });
+        //width, height, opacity -> display:none;
+        
+        $(".btn3").click(function(){
+            $(".box").show(2000);
+        })
+        //display:block -> width, height, opacity
+        
+        $(".btn4").click(function(){
+           $(".box").toggle(2000); 
+        });
+        //show(), hide() 번갈아가면서 적용
+        
+        $(".btn5").click(function(){
+           $(".box").slideUp(2000); 
+        });
+        //height만 조정 -> display:none;
+        
+        $(".btn6").click(function(){
+           $(".box").slideDown(2000); 
+        });
+        
+        $(".btn7").click(function(){
+           $(".box").slideToggle(2000); 
+        });
+        
+        $(".close").click(function(){
+           $(".box").css({"display":"none"}); 
+        });
+        
+        
+        $(".btn8").click(function(){
+            $(".box").fadeOut(2000);
+        });
+        //opacity -> display:none;
+        
+        $(".btn9").click(function(){
+            $(".box").fadeIn(2000);
+        });
+        //display:block -> opacity
+        
+        $(".btn10").click(function(){
+            $(".box").fadeToggle(2000);
+        });
+        
+        $(".btn11").click(function(){
+            $(".box").fadeTo(2000, 0.5);
+        });
+    </script>
+</body>
+</html>

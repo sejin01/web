@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{width: 100px; border: 2px solid #f00; overflow: hidden; height: 100px;}
+        ul:after{content: ""; clear: both; display: block;}
+        ul li{list-style: none; float: left; width: 100px; height: 100px; border: 1px solid #ddd; box-sizing: border-box; line-height: 100px; text-align: center; font-size: 30px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <a href="#" class="prev">이전</a>
+    <a href="#" class="next">다음</a>
+    
+    <script>
+        $(".next").click(function(){
+            $("ul").append($("li:first-child")); //그냥 "li:first-child"만 쓰면 문자열로 인식함
+            //$("li:first-child").appendTo("ul");
+        });
+        
+        $(".prev").click(function(){
+            $("li:last-child").prependTo("ul");    
+        });
+    </script>
+</body>
+</html>

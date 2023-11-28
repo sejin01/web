@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .txt{color: #00f; background: #ff0; font-size: 50px; font-family: "궁서"; text-decoration: underline; text-align: center;}
+    </style>
+</head>
+<body>
+    <h1 class="title">클래스 추가 및 삭제</h1>
+    <button class="btn1">글자변경</button>
+    <button class="btn2">글자리셋</button>
+    <button class="btn3">toggleClass</button>
+    
+<!--.btn1을 클릭하면 글자색상을 #00f, 글자 배경색은 #ff0, 글자크기는 50px, 
+    글꼴은 궁서, 글자스타일은 밑줄처리, 문단은 중앙정렬로 변경
+    
+    .btn2을 클릭하면 위의 효과를 초기화-->
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(".btn1").click(function(){
+//           $("h1").css({"color":"#00f", "background":"#ff0", "font-size":"50px", "font-family":"궁서", "text-decoration-line":"underline", "text-align":"center"}); 
+            $("h1").addClass("txt");
+        });
+        
+        $(".btn2").click(function(){
+//           $("h1").css({"color":"#000", "background":"none", "font-size":"32px", "font-family":"맑은 고딕", "text-decoration-line":"none", "text-align":"left"});
+//            $("h1").removeClass(); 모든 class 제거
+            $("h1").removeClass("txt"); //txt 클래스만 제거
+        });
+        
+        $(".btn3").click(function(){
+          $("h1").toggleClass("txt");  
+        });
+    </script>
+</body>
+</html>
