@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>롤오버</title>
+</head>
+<body>
+    <img src="images/slide1.jpg" alt="이미지1" 
+    data-chimg="images/slide3.jpg" data-orimg="images/slide1.jpg">
+    <img src="images/slide2.jpg" alt="이미지2" 
+    data-chimg="images/slide4.jpg" data-orimg="images/slide2.jpg">
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $("img").hover(
+            function(){
+            var change = $(this).attr("data-chimg");
+            $(this).attr("src",change);
+            },
+            function(){
+            var original = $(this).attr("data-orimg");
+            $(this).attr("src",original);
+            },
+        );
+    </script>
+</body>
+</html>

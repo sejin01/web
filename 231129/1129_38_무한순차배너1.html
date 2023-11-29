@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차배너</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        section {width: 500px; height: 280px; border: 4px solid #f00; margin: 100px auto 0; position: relative;}
+        ul { width: 2000px; position: relative;}
+        ul li { float: left; width: 500px; list-style: none;}
+        a { width: 40px; line-height: 40px; text-decoration: none; background: #000; color: #fff; text-align: center; position: absolute; top:calc(50% - 20px);}
+        .prev { left: 0;}
+        .next { right: 0;}
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li><img src="images/slide1.jpg" alt="이미지1"></li>
+            <li><img src="images/slide2.jpg" alt="이미지2"></li>
+            <li><img src="images/slide3.jpg" alt="이미지3"></li>
+            <li><img src="images/slide4.jpg" alt="이미지4"></li>
+        </ul>
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script>
+            /*
+            자바스크립트는 코드를 위에서 아래로 순차적으로 실행함
+            but, 코드가 다른 행위가 일어난 뒤에 실행되는 경우도 있고 순차적으로 실행되지 않을 때도 있음. (비동기 프로그래밍)
+            콜백은 태스크가 끝나기 전에 함수가 실행되지 않는 것을 보장함
+            */
+            //다음 버튼 누르기 -> 왼쪽으로 이미지 크기만큼 이동 -> (콜백함수)
+            // -> 첫번째 li를  ul의 맨 뒤로 이동 -> -500px 이었던 ul을 0으로 left값 초기화
+            /*  
+                (1) 2 3 4
+              1 (2) 3 4
+                (2) 3 4 1 
+            */
+            $(".next").click(function(){
+                $("ul").animate({"left":"-500px"},500,function(){
+                    $(this).append($("li:first-child")).css({"left":"0"});
+                });
+            });
+            //이전 버튼 누르기 -> ul을 왼족으로 이미지 크기만큼 이동 -> 마지막 li를 ul의 맨 앞으로 보냄
+            // -> 맨 앞에 있는 li를 오른쪽으로 이동
+            /*  
+                (2) 3 4 1
+              2 (3) 4 1
+              1 (2) 3 4
+                (1) 2 3 4 
+            */
+            $(".prev").click(function(){
+                $("ul").css({"left":"-500px"}).prepend($("li:last-child")).animate({"left":"0"},500);
+            });
+            
+        </script>
+        
+    </section>
+</body>
+</html>

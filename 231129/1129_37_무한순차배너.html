@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차배너</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        section {width: 500px; height: 280px; border: 4px solid #f00; margin: 100px auto 0; position: relative; overflow: hidden;}
+        ul { width: 2000px; position: relative;}
+        ul li { float: left; width: 500px; list-style: none;}
+        a { width: 40px; line-height: 40px; text-decoration: none; background: #000; color: #fff; text-align: center; position: absolute; top:calc(50% - 20px);}
+        .prev { left: 0;}
+        .next { right: 0;}
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li><img src="images/slide1.jpg" alt="이미지1"></li>
+            <li><img src="images/slide2.jpg" alt="이미지2"></li>
+            <li><img src="images/slide3.jpg" alt="이미지3"></li>
+            <li><img src="images/slide4.jpg" alt="이미지4"></li>
+        </ul>
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script>
+            //다음 버튼 누르기 -> ul 내에서 첫번째 li를 맨 뒤로 이동
+            $(".next").click(function(){
+                $("ul").append($("li:first-child")); // <-(같음)-> $("li:first-child").appendTo("ul");
+            });
+            //이전 버튼 누르기 -> ul 내에서 마지막 li를 맨 앞으로 이동
+            $(".prev").click(function(){
+                $("ul").prepend($("li:last-child")); // <-(같음)-> $("li:last-child").prependTo("ul");
+            });
+            
+            
+        </script>
+        
+    </section>
+</body>
+</html>

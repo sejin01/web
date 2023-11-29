@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로컬 네비게이션1</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li { list-style: none;}
+        a { text-decoration: none;}
+        body { background: #000;}
+        .lnb { width: 160px; margin: 100px auto 0;}
+        .lnb > li > a { background: #00f; color: #fff; font-size: 18px; font-weight: bold; text-align: center; line-height: 40px; display: block; margin-bottom: 1px; }
+        .lnb ul { display: none; }
+        .lnb ul li a { background: #ddd; color: #000; font-size: 16px; text-align: center; line-height: 40px; display: block; margin-bottom: 1px;}
+    </style>
+</head>
+<body>
+    <ul class="lnb">
+        <li>
+            <a href="https://naver.com">MENU1</a>
+            <ul>
+                <li><a href="#">sub1_1</a></li>
+                <li><a href="#">sub1_2</a></li>
+                <li><a href="#">sub1_3</a></li>
+                <li><a href="#">sub1_4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">MENU2</a>
+            <ul>
+                <li><a href="#">sub2_1</a></li>
+                <li><a href="#">sub2_2</a></li>
+                <li><a href="#">sub2_3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://daum.net">MENU3</a>
+        </li>
+        <li>
+            <a href="#">MENU4</a>
+            <ul>
+                <li><a href="#">sub4_1</a></li>
+                <li><a href="#">sub4_2</a></li>
+                <li><a href="#">sub4_3</a></li>
+                <li><a href="#">sub4_4</a></li>
+                <li><a href="#">sub4_5</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        // [ 서브메뉴를 가지고 있는 ] 메인 메뉴 클릭 -> 서브 메뉴 (0.5초동안) 보이기
+        $(".lng > li").has("ul").children("a").click(function(){
+            $(this).next().slideToggle(500).parent().siblings("li").find("ul").slideUp(500);
+            /*
+            $(".lnb ul").slideUp(500);
+            $(this).next().stop().slideToggle(500);
+            */
+            return false; // a에 링크가 걸려있을 경우 a의 기능을 무시
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab메뉴</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body { background: #333;}
+        section { width: 1000px; margin: 100px auto 0;}
+        ul:after { content: ""; clear: both; display: block;}
+        ul li { float: left; width: 200px; text-align: center; line-height: 50px; list-style: none;}
+        ul li a { color: #ccc; font-size: 18px; font-weight: bold; text-decoration: none; text-transform: uppercase;}
+        ul .select a { color: #f00;}
+        div { background: #fff; height: 300px; display: none;}
+        .view { display: block;}
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li class="select"><a href="#" data-tab="notice">menu1</a></li>
+            <li><a href="#" data-tab="faq">menu2</a></li>
+            <li><a href="#" data-tab="qna">menu3</a></li>
+            <li><a href="#" data-tab="data">menu4</a></li>
+            <li><a href="#"  data-tab="img">menu5</a></li>
+        </ul>
+        <div class="notice view">
+            <h1>menu1 내용</h1>
+        </div>
+        <div class="faq">
+            <h1>menu2 내용</h1>
+        </div>
+        <div class="qna">
+            <h1>menu3 내용</h1>
+        </div>
+        <div class="data">
+            <h1>menu4 내용</h1>
+        </div>
+        <div class="img">
+            <h1>menu5 내용</h1>
+        </div>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $("a").click(function(){
+            // 1. 메뉴 색상 변경
+            $(this).parent().addClass("select").siblings().removeClass();
+            
+            
+            
+            /* 2. 관련된 내용 표시 (인덱스 이용 or 클래스 이용)
+            2-1 인덱스 이용
+            클릭한 a의 부모인 li의 순번을 가져옴 -> 같은 순번 div에 .view 추가 -> 그 외 다른 div에는 클래스 제거
+            
+            var num = $(this).parent().index();        //0(첫번째) 1 2 3 4
+            //형제에는 ul도 있기 때문에 div 명시, div 클래스에는 다른 것도 있기 때문에 view만 없애기 위해 명시
+            $("div").eq(num).addClass("view).siblings("div").removeClass("view");  
+            
+            
+            */
+            
+            /* 
+            2-2 클래스 이용
+            클릭한 a의 data-tab 값 가져옴 -> 가져온 값과 관련된 div에게 .view 추가 -> 그 외 다른 div에는 클래스 제거
+            */
+            var tn = $(this).attr("data-tab");
+            console.log(tn);
+            $("."+tn).addClass("view").siblings("div").removeClass("view");
+            
+            /*
+            2-3 text 내용과 div class를 같도록 설정하여 연결
+            클릭한 a의 text를 가져옴  -> 글자와 관련된 div class에 text와 같은 값 각각 추가 
+            -> .view 추가 (data-tab 필요 x) -> 그 외 다른 div에는 클래스 제거
+            
+            var tn = $(this).text();
+            $("."+tn).addClass("view").siblings("div").removeClass("view");
+            */
+        });
+    </script>
+</body>
+</html>

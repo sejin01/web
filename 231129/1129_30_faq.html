@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <style>
+        div { display: none;}
+        ul li { list-style: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <p>01) 홈페이지 어떻게 만드나요?</p>
+            <div>html, css, js 등등 이용하면 돼요.</div>
+        </li>
+        <li>
+            <p>02) 지금 무엇을 해야 할까요?</p>
+            <div>열심히 공부하면 돼요.</div>
+        </li>
+        <li>
+            <p>03) 수업은 언제 끝날까요?</p>
+            <div>오전 9시 10분 ~ 오후 6시 10분 수업입니다.</div>
+        </li>
+        <li>
+            <p>04) 취업은 어떻게 하나요?</p>
+            <div>포트폴리오를 열심히 준비하면 돼요.</div>
+        </li>
+    </ul>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        /*
+        $("li").click(function(){
+            //둘의 순서가 바껴도 실행
+            $(this).children("div").slideToggle(500);
+            $(this).siblings().children("div").slideUp(500);
+        });
+        */
+        
+        $("p").click(function(){
+            $(this).next().slideToggle(500);
+            $(this).parent().siblings().children("div").slideUp(500);
+            
+            /*
+            순서가 바꼈을 때 자기 자신을 눌렀을 때 접혔다가 다시 열리는 현상 발생 (stop 사용)
+            $("div).slideUp(500);
+            $(this).next().stop().slideToggle(500);
+            */
+        });
+    </script>
+</body>
+</html>
