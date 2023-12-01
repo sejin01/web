@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차배너_숫자표시</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        section {width: 500px; height: 280px; border: 4px solid #f00; margin: 100px auto 0; position: relative;}
+        ul { width: 2000px; position: relative;}
+        ul li { float: left; width: 500px; list-style: none;}
+        a { width: 40px; line-height: 40px; text-decoration: none; background: #000; color: #fff; text-align: center; position: absolute; top:calc(50% - 20px);}
+        .prev { left: 0;}
+        .next { right: 0;}
+        p { text-align: center; font-size: 50px;}
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li><img src="images/slide1.jpg" alt="이미지1"></li>
+            <li><img src="images/slide2.jpg" alt="이미지2"></li>
+            <li><img src="images/slide3.jpg" alt="이미지3"></li>
+            <li><img src="images/slide4.jpg" alt="이미지4"></li>
+        </ul>
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+    </section>
+    <p>
+       <span class="num">1</span>
+       <span>/</span>
+       <span class="total">4</span>
+    </p>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        var tot = $("ul li").length;    //4
+        $(".total").text(tot);
+        
+        var n = 1;
+        
+        $(".next").click(function(){
+            $("ul").animate({"left":"-500px"},500,function(){
+                $(this).append($("li:first-child")).css({"left":"0"});
+            });
+            
+            n++;
+            if (n > tot)
+                n = 1;
+            $(".num").text(n);
+        });
+        
+        $(".prev").click(function(){
+            $("ul").css({"left":"-500px"}).prepend($("li:last-child")).animate({"left":"0"},500);
+            
+            n--;
+            if (n <= 0)
+                n = tot;
+            $(".num").text(n);
+        });
+    </script>
+</body>
+</html>

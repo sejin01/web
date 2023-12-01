@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차슬라이드배너3</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        #main { position: relative; overflow: hidden;}
+        .slide { width: 500%; /*(li 5 * 100%)*/ position: relative;}
+        .slide:after { content: ""; clear: both; display: block;}
+        .slide li {float: left; width: 20%; /*(부모100% / 5)*/ height: 500px;}
+        /*배경이미지 => 클래스 이용*/
+        .slide .bg0 { background: url(images/slide1.jpg) no-repeat center/cover;}
+        .slide .bg1 { background: url(images/slide2.jpg) no-repeat center/cover;}
+        .slide .bg2 { background: url(images/slide3.jpg) no-repeat center/cover;}
+        .slide .bg3 { background: url(images/slide4.jpg) no-repeat center/cover;}
+        .ment { width: 400px; height: 300px; background: #000; padding: 40px; text-align: center; color: #fff; box-sizing: border-box; position: absolute; left: calc(50% - 600px); top: 100px;}
+        .page { position: absolute; bottom: 40px; left: 0; width: 100%; text-align: center;}
+        .page li { width: 20px; height: 20px; background: #ccc; text-align: center; display: inline-block; cursor: pointer; border-radius: 20px; margin: 0 10px; text-indent: -30px; overflow: hidden;}
+        .page .select { background: #ff0;}
+        #main > a{width: 60px; height: 60px; text-align: center; text-decoration: none; position: absolute; top: calc(50% - 30px); background: #000; color: #fff;}
+        .prev{left: 0;}
+        .next{right: 0;}
+    </style>
+</head>
+<body>
+    <section id="main">
+        <ul class="slide">
+            <li class="bg0" data-ment="1번 슬라이드의 내용">1</li>
+            <li class="bg1" data-ment="2번 슬라이드의 내용">2</li>
+            <li class="bg2" data-ment="3번 슬라이드의 내용">3</li>
+            <li class="bg3" data-ment="4번 슬라이드의 내용">4</li>
+            <li class="bg0" data-ment="1번 슬라이드의 내용">1</li>
+        </ul>
+        
+        <div class="ment">
+            <h1>1번 슬라이드의 내용</h1>
+        </div>
+        
+        <ul class="page">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+        
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/slide3.js"></script>
+</body>
+</html>

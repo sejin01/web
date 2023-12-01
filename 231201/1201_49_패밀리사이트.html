@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>패밀리사이트</title>
+</head>
+<body>
+    <select class="site">
+        <option value="">사이트를 선택하세요</option>
+        <option value="http://naver.com">네이버</option>
+        <option value="http://daum.net">다음</option>
+        <option value="http://google.com">구글</option>
+        <option value="http://nate.com">네이트</option>
+    </select>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(".site").change(function(){
+            var loc = $(this).val(); 
+            console.log(loc);
+            
+            location.href = loc;
+        });
+    </script>
+</body>
+</html>
