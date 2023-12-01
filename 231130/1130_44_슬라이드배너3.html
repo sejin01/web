@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>슬라이드 배너3</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        .frame{border: 4px solid #f00; margin: 100px auto 0; position: relative; overflow: hidden;}
+        .slide{position: relative;}
+        .slide:after{content: ""; clear: both; display: block;}
+        .slide li{float: left;}
+        .page{position: absolute; right: 20px; bottom: 20px;}
+        .page li{width: 20px; height: 20px; background: #ccc; float: left; margin-left: 10px; text-indent: 20px; overflow: hidden;}
+        .page .select{background: #ff0;}
+        .frame > a{width: 40px; line-height: 40px; background: #000; color: #fff; text-decoration: none; text-align: center; position: absolute; top: calc(50% - 20px);}
+        .prev{left: 0;}
+        .next{right: 0;}
+        p{text-align: center; font-size: 30px;}
+    </style>
+</head>
+<body>
+    <section class="frame">
+        <ul class="slide">
+            <li><img src="images/pic1.jpg" alt="이미지1"></li>
+            <li><img src="images/pic2.jpg" alt="이미지2"></li>
+            <li><img src="images/pic3.jpg" alt="이미지3"></li>
+            <li><img src="images/pic3.jpg" alt="이미지3"></li>
+            <li><img src="images/pic3.jpg" alt="이미지3"></li>
+            <li><img src="images/pic3.jpg" alt="이미지3"></li>
+        </ul>
+        <ul class="page">
+        </ul>
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+    </section>
+    <p><span class="num">1</span> / <span class="total">4</span></p>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        var time = 4000; // 1초 = 1000
+        
+        var iw = $(".slide img").width(); //이미지의 너비값
+        var ih = $(".slide img").height(); //이미지의 높이값
+        var ln = $(".slide li").length; //li의 갯수 = 이미지의 갯수
+        var n = 0;
+        
+        $(".total").text(ln); //이미지의 전체 갯수 문구
+        
+        $(".frame").css({"width":iw, "height":ih}); //프레임의 너비높이 세팅
+        $(".slide").css({"width":iw * ln}); //ul의 너비
+        
+        for (var i = 1; i<=ln; i++) {//이미지 갯수만큼 반복
+            if(i == 1){ //첫번째 페이지라는 의미. (페이지 하나만 있을 때X)
+                $(".page").append("<li class='select'>"+i+"</li>")
+            }else{
+                $(".page").append("<li>"+i+"</li>");
+            }
+        }
+        
+        var timer = setInterval("auto()", time);
+        
+        function auto(){
+            n++;
+            
+            if(n >= ln){
+                $("slide").animate({"left":0}, 1000);
+                n = 0;
+            }
+            
+            $(".slide").animate({"left":n*-iw}, 1000);
+            $(".page li").eq(n).addClass("select").siblings().removeClass("select");
+            $(".num").text(n + 1);
+            
+        }
+        
+        $(".page li").click(function(){
+            n = $(this).index();
+            $(this).addClass("select").siblings().removeClass();
+            $(".slide").animate({"left":n*-iw}, 1000);
+            $(".num").text(n + 1);
+        })
+        
+        $(".next").click(function(){
+            auto(); 
+        });
+        
+        $(".prev").click(function(){
+            n--;
+            
+            if(n < 0){
+                n = ln - 1;    
+            }
+            
+            $(".slide").animate({"left":-n*iw}, 1000);
+            $(".page li").eq(n).addClass("select").siblings().removeClass();
+            $(".num").text(n + 1);
+        })
+        
+        $(".slide").hover(
+            function(){
+                clearInterval(timer);
+            },
+            function(){
+                timer = setInterval("auto()", time);
+            });
+    </script>
+</body>
+</html>

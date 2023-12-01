@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차배너3</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .frame{width: 300px; height: 300px; margin: 100px auto 0; position: relative; border: 4px solid #00f;}
+        .slide{width: 1500px; position: relative;}
+        .slide li{float: left; list-style: none;}
+        .frame > a{width: 40px; height: 40px; text-align: center; text-decoration: none; position: absolute; top: calc(50% - 20px); background: #fcf;}
+        .prev{left: 0;}
+        .next{right: 0;}
+        .frame > .btn{top: auto; bottom: 0; left: calc(50% - 20px);}
+    </style>
+</head>
+<body>
+    <section class="frame">
+        <ul class="slide">
+            <li><img src="images/pic1.jpg" alt="이미지1"></li>
+            <li><img src="images/pic2.jpg" alt="이미지1"></li>
+            <li><img src="images/pic3.jpg" alt="이미지1"></li>
+            <li><img src="images/pic4.jpg" alt="이미지1"></li>
+            <li><img src="images/pic5.jpg" alt="이미지1"></li>
+        </ul>
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+        <a href="#" class="btn">||</a>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        
+        var chk = 0;
+        var timer = setInterval("auto()", 3000);
+        
+        function auto(){
+            $(".slide").animate({"left":"-300px"}, 1000, function(){
+                $(".slide").append($("li:first-child"));
+                $(".slide").css({"left":0});
+            })
+        }
+        
+        $(".next").click(function(){
+            if(chk == 0){ //현재 setinterval 작동이 되고 있다
+                clearInterval(timer); //이전 auto를 삭제
+                timer = setInterval("auto()", 3000); //next 누른 이후부터 2초가 다시 시작
+            }
+            auto(); //무한반복 없이 다음 페이지 이동만 남음 + 멈춰있는 상태에서 무한반복이 생기면 안되기 때문에 if로 조건을 걸어서 무한반복이 멈췄을 땐 2초 간격 없이 사용자가 원하는 대로 옆페이지 이동함
+        });
+        
+        $(".prev").click(function(){
+            if(chk == 0){
+                clearInterval(timer);
+                timer = setInterval("auto()", 3000);
+            }
+            
+            $("ul").css({"left":"-300px"}).prepend($("li:last-child")).animate({"left":0}, 1000);
+        })
+        
+        $(".btn").click(function(){
+            if(chk == 0){
+                $(".btn").text("▶");
+                clearInterval(timer);
+                chk = 1;
+            }else{
+                $(".btn").text("||");
+                timer = setInterval("auto()", 3000);
+                chk = 0;
+            }
+        })
+    </script>
+</body>
+</html>

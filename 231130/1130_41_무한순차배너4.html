@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차배너4</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        section{width: 980px; margin: 100px auto 0; position: relative;}
+        section h2{margin-bottom: 40px;}
+        section .frame{overflow: hidden;}
+        .slide{width: 1700px; position: relative;}
+        .slide:after{content: ""; clear: both; display: block;}
+        .slide li{float: left; margin-right: 40px; width: 300px; list-style: none;}
+        .btn{position: absolute; right: 0; top: 0;}
+        .btn > a{display: inline-block; width: 40px; line-height: 40px; background: #000; color: #fff; text-align: center; text-decoration: none;}
+    </style>
+</head>
+<body>
+    <section>
+      <h2>현장속으로</h2>
+        <div class="frame">
+            <ul class="slide">
+                <li><img src="images/pic1.jpg" alt="이미지1"></li>
+                <li><img src="images/pic2.jpg" alt="이미지1"></li>
+                <li><img src="images/pic3.jpg" alt="이미지1"></li>
+                <li><img src="images/pic4.jpg" alt="이미지1"></li>
+                <li><img src="images/pic5.jpg" alt="이미지1"></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a href="#" class="prev">이전</a>
+            <a href="#" class="next">다음</a>
+        </div>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        var chk = 0;
+        var timer = setInterval("auto()", 3000);
+        
+        function auto(){
+            $(".slide").animate({"left":"-340px"}, 1000, function(){
+                $(".slide").css({"left":0});
+                $(".slide").append($("li:first-child"));
+            });
+        }
+        
+        $(".next").click(function(){
+            auto();
+        })
+        
+        $(".prev").click(function(){
+            $(".slide").css({"left":"-340px"});
+            $(".slide").prepend($("li:last-child"));
+            $(".slide").animate({"left":0}, 1000);
+        })
+    </script>
+</body>
+</html>

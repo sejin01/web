@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한순차배너2</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .frame{width: 300px; height: 300px; margin: 100px auto 0; position: relative; border: 4px solid #00f;}
+        .slide{width: 1500px; position: relative;}
+        .slide li{float: left; list-style: none;}
+        .frame > a{width: 40px; height: 40px; text-align: center; text-decoration: none; position: absolute; top: calc(50% - 20px); background: #fcf;}
+        .prev{left: 0;}
+        .next{right: 0;}
+    </style>
+</head>
+<body>
+    <section class="frame">
+        <ul class="slide">
+            <li><img src="images/pic1.jpg" alt="이미지1"></li>
+            <li><img src="images/pic2.jpg" alt="이미지1"></li>
+            <li><img src="images/pic3.jpg" alt="이미지1"></li>
+            <li><img src="images/pic4.jpg" alt="이미지1"></li>
+            <li><img src="images/pic5.jpg" alt="이미지1"></li>
+        </ul>
+        <a href="#" class="prev">이전</a>
+        <a href="#" class="next">다음</a>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        var timer = setInterval("auto()", 3000);
+        
+        function auto(){
+            $(".slide").animate({"left":"-300px"}, 300, function(){
+                $(".slide").append($("li:first-child")).css({"left":0});
+            })
+        }
+        
+        $(".prev").click(function(){
+            $(".slide").css({"left":-300});
+            $("li:last-child").prependTo(".slide");
+            $(".slide").animate({left:0}, 1000);
+        });
+        
+        $(".next").click(function(){
+            auto();
+        })
+        
+        $(".frame").hover(
+            function(){
+                clearInterval(timer); 
+            },
+            function(){
+                timer = setInterval("auto()", 3000);
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>슬라이드 배너1</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        .frame{width: 500px; height: 280px; border: 4px solid #f00; margin: 100px auto 0; position: relative;}
+        .slide{position: relative; width: 2000px;}
+        .slide:after{content: ""; clear: both; display: block;}
+        .slide li{float: left;}
+        .page{position: absolute; right: 20px; bottom: 20px;}
+        .page li{width: 20px; height: 20px; background: #ccc; float: left; margin-left: 10px; text-indent: 20px; overflow: hidden;}
+        .page .select{background: #ff0;}
+    </style>
+</head>
+<body>
+    <section class="frame">
+        <ul class="slide">
+            <li><img src="images/slide1.jpg" alt="이미지1"></li>
+            <li><img src="images/slide2.jpg" alt="이미지2"></li>
+            <li><img src="images/slide3.jpg" alt="이미지3"></li>
+            <li><img src="images/slide4.jpg" alt="이미지4"></li>
+        </ul>
+        <ul class="page">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        //페이지네이션이 있는 경우에는 절대 append, prepend로는 안됨
+        //자리가 바뀌면 절대 안됨
+        //n이라는 변수가 핵심 키워드
+        
+        var n = 0; //슬라이드가 실행된 횟수
+        function auto(){
+            n++;
+            if(n >= 4){//이미지 개수
+                n = 0;
+            }
+            $(".slide").animate({"left":n*-500}, 300);
+                        
+            $(".page li").eq(n).addClass("select").siblings().removeClass("select");
+        }
+        
+        var timer = setInterval("auto()", 2000);
+        
+        $(".frame").hover(
+            function(){
+                clearInterval(timer);
+            },
+            function(){
+                timer = setInterval("auto()", 2000);
+            });
+        
+        
+        $(".page li").click(function(){
+            $(this).addClass("select").siblings().removeClass();
+            
+            n = $(this).index();
+            $(".slide").animate({"left":-n*500}, 1000);
+        });
+    </script>
+</body>
+</html>
