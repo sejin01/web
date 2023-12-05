@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        header{background: #ffc; transition: 0.3s; overflow: hidden; position: relative; transition: 0.5s; height: 100px;}
+        h1{line-height: 60px; text-align: center;}
+        .wrap{width: 800px; margin: 0 auto;}
+        .gnb:after{content: ""; clear: both; display: block;}
+        header > ul{position: absolute; left: 0; top: 100px; width: 100%; display: none;}
+        .gnb > li{float: left; width: 200px; line-height: 40px; list-style: none; text-align: center;}
+        header > ul.on{display: block;}
+        .gnb > li > a{display: block; background: #fcf; text-decoration: none; font-weight: bold; color: #000;}
+        header ul li{list-style: none;}
+        header ul li a{line-height: 40px; display: block; text-decoration: none; color: #000; text-transform: uppercase; background: #ccf;}
+        section{background: #cff; height: 2000px; font-size: 40px; text-align: center;}
+        section h1{font-size: 40px;}
+    </style>
+</head>
+<body>
+<!--
+  부모에게 position이 걸려있을 때.
+  메인메뉴 밖에 서브메뉴를 코딩(마치 탭메뉴)
+-->
+   <header>
+       <div class="wrap">
+           <h1>LOGO</h1>
+            <ul class="gnb">
+                <li>
+                    <a href="#">Menu1</a>
+                </li>
+                <li>
+                    <a href="#">Menu2</a>
+                </li>
+                <li>
+                    <a href="#">Menu3</a>
+                </li>
+                <li>
+                    <a href="#">Menu4</a>
+                </li>
+            </ul>
+            
+            
+        </div>
+        <ul class="sm1">
+                <li><a href="#">sub1_1</a></li>
+                <li><a href="#">sub1_2</a></li>
+                <li><a href="#">sub1_3</a></li>
+                <li><a href="#">sub1_4</a></li>
+            </ul>
+            
+            <ul class="sm2">
+                <li><a href="#">sub2_1</a></li>
+                <li><a href="#">sub2_2</a></li>
+                <li><a href="#">sub2_3</a></li>
+                <li><a href="#">sub2_4</a></li>
+            </ul>
+            
+            <ul class="sm3">
+                <li><a href="#">sub3_1</a></li>
+                <li><a href="#">sub3_2</a></li>
+                <li><a href="#">sub3_3</a></li>
+                <li><a href="#">sub3_4</a></li>
+            </ul>
+            
+            <ul class="sm4">
+                <li><a href="#">sub4_1</a></li>
+                <li><a href="#">sub4_2</a></li>
+                <li><a href="#">sub4_3</a></li>
+                <li><a href="#">sub4_4</a></li>
+            </ul>
+   </header>
+   <section>
+       <h1>본문내용</h1>
+   </section>
+   
+    <script>
+//        $(".gnb > li").hover(
+//            function(){
+//                $(this).addClass("on");
+//                var uh = $(this).children("ul").height() + 100;
+//                $("header").css({"height":uh});
+//            },
+//            function(){
+//                $(this).removeClass("on");
+//                $("header").css({"height":100});
+//            });  
+        
+        $(".gnb li").on("mouseover", function(){
+            var n = $(this).index() + 1; // 1234
+            $(".sm"+n).addClass("on").siblings("ul").removeClass("on");
+            var sh = $(".sm"+n).height() + 100;
+            $("header").css({"height":sh});
+        })
+        
+        $("header").on("mouseleave", function(){
+            $("header").css({"height":100});
+        })
+    </script>
+</body>
+</html>

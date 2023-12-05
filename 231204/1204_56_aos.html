@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        .main1{background: #ffc; height: 1000px;}
+        .main2{background: #ccf; height: 1000px;}
+        .main3{background: #cfc; height: 1000px;}
+        .main3 ul li{display: inline-block; width: 200px; height: 100px; background: #ccc; margin-right: 20px;}
+    </style>
+</head>
+<body>
+    <section class="main1">
+        <h1 data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">메인1번 내용</h1>
+    </section>
+    <section class="main2">
+        <h1 data-aos="fade-down">메인2번 내용</h1>
+        <p>요소별로도 애니메이션을 나타낼 수 있음</p>
+    </section>
+    <section class="main3" data-aos-easing="ease-in-out">
+        <h1>메인3번 내용</h1>
+        <ul>
+            <li data-aos="fade-in" data-aos-delay="0">메뉴1</li>
+            <li data-aos="fade-in" data-aos-delay="200">메뉴2</li>
+            <li data-aos="fade-in" data-aos-delay="400">메뉴3</li>
+            <li data-aos="fade-in" data-aos-delay="600">메뉴4</li>
+        </ul>
+    </section>
+    
+    <script>
+        
+    </script>
+    
+    
+    
+    <script>
+        AOS.init({//전체에 적용
+            offset:500,
+            duration:2000,
+            once:true, //한번만 보여주는 명령
+            disable'mobile'
+        });
+    </script>
+    
+</body>
+</html>

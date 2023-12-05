@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        header{background: #ffc; transition: 0.3s; overflow: hidden; position: relative; transition: 0.5s; height: 100px;}
+        h1{line-height: 60px; text-align: center;}
+        .wrap{width: 800px; margin: 0 auto;}
+        .gnb:after{content: ""; clear: both; display: block;}
+        .gnb ul{position: absolute; left: 0; top: 100px; width: 100%; display: none;}
+        .gnb > li{float: left; width: 200px; line-height: 40px; list-style: none; text-align: center;}
+        .gnb > li.on > ul{display: block;}
+        .gnb > li > a{display: block; background: #fcf; text-decoration: none; font-weight: bold; color: #000;}
+        .gnb ul li{list-style: none;}
+        .gnb ul li a{line-height: 40px; display: block; text-decoration: none; color: #000; text-transform: uppercase; background: #ccf;}
+        section{background: #cff; height: 2000px; font-size: 40px; text-align: center;}
+        section h1{font-size: 40px;}
+    </style>
+</head>
+<body>
+<!--
+  서브메뉴의 내용이 엄청 많을 때, 관공서, 포털사이트.
+  조건 : 부모에게 position이 걸려있지 않을 때. 메인메뉴 안에 서브메뉴가 있는 형식으로 코딩
+-->
+   <header>
+       <div class="wrap">
+           <h1>LOGO</h1>
+            <ul class="gnb">
+                <li>
+                    <a href="#">Menu1</a>
+                    <ul>
+                        <li><a href="#">sub1_1</a></li>
+                        <li><a href="#">sub1_2</a></li>
+                        <li><a href="#">sub1_3</a></li>
+                        <li><a href="#">sub1_4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Menu2</a>
+                    <ul>
+                        <li><a href="#">sub2_1</a></li>
+                        <li><a href="#">sub2_2</a></li>
+                        <li><a href="#">sub2_3</a></li>
+                        <li><a href="#">sub2_4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Menu3</a>
+                    <ul>
+                        <li><a href="#">sub3_1</a></li>
+                        <li><a href="#">sub3_2</a></li>
+                        <li><a href="#">sub3_3</a></li>
+                        <li><a href="#">sub3_4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Menu4</a>
+                    <ul>
+                        <li><a href="#">sub4_1</a></li>
+                        <li><a href="#">sub4_2</a></li>
+                        <li><a href="#">sub4_3</a></li>
+                        <li><a href="#">sub4_4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+   </header>
+   <section>
+       <h1>본문내용</h1>
+   </section>
+   
+    <script>
+        $(".gnb > li").hover(
+            function(){
+                $(this).addClass("on");
+                var uh = $(this).children("ul").height() + 100;
+                $("header").css({"height":uh});
+            },
+            function(){
+                $(this).removeClass("on");
+                $("header").css({"height":100});
+            });  
+    </script>
+</body>
+</html>
