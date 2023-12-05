@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>풀페이지</title>
+    <!--콘텐츠의 높이가 높으면 흘러넘치기 때문에, 특히 노트북
+        콘텐츠의 높이가 낮고 적을 때 풀페이지로 작업-->
+    
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    
+    <script type="text/javascript" src="js/scrolloverflow.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    
+    <style>
+        * {margin: 0; padding: 0;}
+        #menu { position: absolute; z-index: 99; background: #fff; color: #000; width: 100%; text-align: center; font-size: 20px; transition: 0.5s;}
+        #menu.on {background: #000; color: fff;}
+        #menu li { display: inline-block; margin-right: 10px; line-height: 80px;}
+        #menu li a { color: inherit; text-decoration: none;}
+        .footer { height: 300px; background: #006;}
+    </style>
+
+</head>
+<body>
+    <div style="position:fixed;top:100px;left:50px;color:#000;z-index:999;" id="callbacksDiv"></div>
+    
+    <ul id="menu"> <!--callbacks.html / navigationV.html-->
+        <li data-menuanchor="intro"><a href="#intro">Intro</a></li>
+        <li data-menuanchor="portfolio"><a href="#portfolio">Portfolio</a></li>
+        <li data-menuanchor="spec"><a href="#spec">Spec</a></li>
+        <li data-menuanchor="resume"><a href="#resume">Resume</a></li>
+    </ul>
+    
+    <div id="fullpage">
+        <div class="section " id="section0">
+
+        </div>
+        
+        <div class="section" id="section1">
+            
+        </div>
+        
+        <div class="section" id="section2">
+    
+        </div>
+        
+         <!--autoHeight.html-->
+        <div class="section fp-auto-height" id="section3">
+            <div class="footer">
+                h1의footer부분
+            </div>
+        </div>
+    </div>
+</body>
+</html>
